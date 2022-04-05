@@ -1,0 +1,26 @@
+<!-- Navigation Bar -->
+
+<nav class="navbar navbar-light bg-primary">
+    <div class="container-fluid">
+        <h1 style="color: aliceblue;">Librarian Dashboard</h1>
+        <div class="d-flex">
+            <a routerLink="">Home</a>
+            <a data-bs-toggle="modal" data-bs-target="#bookSearch" routerLink="/book-search">Book Search</a>
+            <a data-bs-toggle="modal" data-bs-target="#studentPage" routerLink="//student-page">Student Page</a>
+            <a data-bs-toggle="modal" data-bs-target="#borrowRequest" routerLink="/borrow-request">Borrow Request</a>
+            
+            <!-- Use of Internationalization -->
+            <div class="language-picker">
+                <select #locale (change)="changeLocale(locale.value)">
+                    <option value="english">English</option>
+                    <option value="french">French</option>
+                    <option value="nepali">Nepali</option>
+                </select>
+                <p>{{'LIBRARIAN_DASHBOARD' | translate}}</p>
+            </div>
+
+        </div>
+    </div>
+</nav>
+
+<router-outlet></router-outlet>

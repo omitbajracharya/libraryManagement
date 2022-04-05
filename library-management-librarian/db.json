@@ -1,0 +1,64 @@
+{
+  "posts": [
+    {
+      "bookId": 6,
+      "bookName": "ewtrwert",
+      "authorName": "wqer",
+      "quantity": "3",
+      "faculty": "fdsafs",
+      "id": 6
+    },
+    {
+      "bookId": 7,
+      "bookName": "C programming",
+      "authorName": "ewtwe",
+      "quantity": "2",
+      "faculty": "BIT",
+      "id": 7
+    },
+    {
+      "bookId": 19,
+      "bookName": "System Development Lifecycle Model",
+      "authorName": "husdfas jfs",
+      "quantity": "15",
+      "faculty": "BSc.CSIT",
+      "id": 8
+    },
+    {
+      "bookId": "",
+      "bookName": "OS",
+      "authorName": "Raju Gautam",
+      "quantity": "20",
+      "faculty": "BSc.CSIT",
+      "id": 9
+    },
+    {
+      "bookId": 0,
+      "bookName": "Accounting",
+      "authorName": "sadf sdfj",
+      "quantity": "2",
+      "faculty": "BBA",
+      "id": 10
+    },
+    {
+      "bookId": 0,
+      "bookName": "OOP ",
+      "authorName": "kdsjfsk ",
+      "quantity": "2",
+      "faculty": "IT",
+      "id": 11
+    },
+    {
+      "bookId": 0,
+      "bookName": "Account",
+      "authorName": "jasf jsdf",
+      "quantity": "3",
+      "faculty": "BBA",
+      "id": 12
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

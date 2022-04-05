@@ -1,0 +1,128 @@
+<!-- <p>student-page works!</p> -->
+
+<div class="container-fluid">
+
+    <button class="btn btn-outline-primary register" data-bs-toggle="modal" data-bs-target="#register_std"
+        type="submit">Register Student</button>
+
+
+
+    <!--Add Student Modal -->
+    <!--&-->
+    <!--EDIT Student Modal -->
+    <div class="modal fade" id="register_std" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Register new Students</h5>
+                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                </div>
+                <div class="modal-body">
+                    <form [formGroup]="stdDetail">
+                        <!--Reactive Form-->
+                        <div class="mb-3">
+                            <label for="identity" class="form-label">ID</label>
+                            <input type="text" formControlName="id" class="form-control" id="identity" value="1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" formControlName="name" id="name" value="omit">
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone</label>
+                            <input type="number" formControlName="phone" minlength="10" maxlength="10"
+                                value="9860486474" class="form-control" id="phone" aria-describedby="phone">
+                        </div>
+                        <div class="mb-3">
+                            <label for="semester" class="form-label">Semester</label>
+                            <input type="number" formControlName="semester" class="form-control" value="8" id="semester"
+                                aria-describedby="semester">
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal"
+                                (click)="regisStd()">Register</button>
+                            <!-- <button *ngIf="IsForUpdate==false" type="submit" class="btn btn-primary" (click)="regisStd()">Register</button>
+                <button *ngIf="IsForUpdate==true" type="submit" class="btn btn-primary" data-bs-dismiss="modal" (click)="UpdateStd()">UPDATE</button> -->
+                        </div>
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!--EDIT Student Modal -->
+    <div class="modal fade" id="update_std" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Update Student Info</h5>
+                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                </div>
+                <div class="modal-body">
+                    <form [formGroup]="stdDetail">
+                        <!--Reactive Form-->
+                        <div class="mb-3">
+                            <label for="identity" class="form-label" hidden>ID</label>
+                            <input type="number" formControlName="id" class="form-control" id="identity"
+                                [value]="previousDataStd.id" hidden>
+                        </div>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" formControlName="name" id="name"
+                                [value]="previousDataStd.name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone</label>
+                            <input type="number" formControlName="phone" minlength="10" maxlength="10"
+                                value={{previousDataStd.phone}} class="form-control" id="phone">
+                        </div>
+                        <div class="mb-3">
+                            <label for="semester" class="form-label">Semester</label>
+                            <input type="number" formControlName="semester" minlength="1" maxlength="8"
+                                value={{previousDataStd.semester}} class="form-control" id="semester">
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal"
+                                (click)="UpdateStd()">UPDATE</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- # -->
+    <table class="table ">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">NAME</th>
+                <th scope="col">PHONE</th>
+                <th scope="col">Semester</th>
+                <th scope="col">ACTION</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let std of stds;let i= index">
+                <!-- <th scope="row">{{std.id}}</th> -->
+                <th scope="row">{{std.id}}</th>
+                <td>{{std.name}}</td>
+                <td>{{std.phone}}</td>
+                <td>{{std.semester}}</td>
+                <td class="btn-outline-success" data-bs-toggle="modal" data-bs-target="#update_std"
+                    (click)="setPreviousValueStudent(i)">Edit</td>&nbsp;&nbsp;
+                <td class="btn-outline-danger" (click)="DeleteStd(i)">Delete</td>
+            </tr>
+        </tbody>
+    </table>
+    <div *ngIf="stds.length == 0" class="alert alert-info">
+        Till Now no Students are Register... !!!
+    </div>
+</div>

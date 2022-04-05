@@ -1,0 +1,25 @@
+<div>
+    <table class="table ">
+        <thead>
+        <tr>
+        <th>Student</th>
+        <th>Book</th>
+        <th>Action</th>
+        </tr>
+        </thead>
+        <tbody *ngIf="noBorrow==false"> <!--if some books are been issued by student-->
+            <tr  *ngFor="let x of borrowListFromLocalStorage;let i=index">
+                <td>{{x[0]}}</td>   <!--student name-->
+                <td>{{x[1]}}</td>   <!--book name-->
+                <td>
+                    <button class="btn btn-outline-success" (click)="checkOut(i)">ReturnBook</button>
+                </td>
+            </tr>
+        </tbody>
+        
+    </table>
+</div>
+
+<div *ngIf="noBorrow==true" style="text-align:center;">
+    {{allBooksReturn}}
+</div>

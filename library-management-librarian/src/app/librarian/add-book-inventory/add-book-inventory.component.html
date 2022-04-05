@@ -1,0 +1,80 @@
+<div class="container-fluid">
+  <button type="button" (click)="clickAddBook()" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addBook">Add Book</button>
+</div>
+
+<table class="table mt-3">
+  <thead>
+    <tr>
+      <th scope="col">Book Id</th>
+      <th scope="col">Book Name</th>
+      <th scope="col">Author Name</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Faculty</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of librarianData">
+      <td>{{ row.id }}</td>
+      <td>{{ row.bookName }}</td>
+      <td>{{ row.authorName }}</td>
+      <td>{{ row.quantity }}</td>
+      <td>{{ row.faculty }}</td>
+
+      <td>
+        <button (click)="onEdit(row)" style="color: aliceblue;" type="button" data-bs-toggle="modal"
+          data-bs-target="#addBook" class="btn btn-info">Edit</button>
+        <button (click)="deleteBook(row)" class="btn btn-danger mx-3">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Modal for Add Book -->
+<div class="modal fade" id="addBook" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Book</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formValue">
+          <!-- <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Book Id</label>
+                  <input type="number" formControlName="bookId" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Book Id">
+                </div> -->
+          <div class="mb-3">
+            <label for="exampleInputPassword1">Book Name</label>
+            <input type="text" formControlName="bookName" class="form-control" id="exampleInputPassword1"
+              placeholder="Enter Book Name">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1">Author Name</label>
+            <input type="text" formControlName="authorName" class="form-control" id="exampleInputPassword1"
+              placeholder="Enter Author Name">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1">Quantity</label>
+            <input type="text" formControlName="quantity" class="form-control" id="exampleInputPassword1"
+              placeholder="Enter No. of Books">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1">Faculty</label>
+            <input type="text" formControlName="faculty" class="form-control" id="exampleInputPassword1"
+              placeholder="Enter Faculty">
+          </div>
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" *ngIf="showAdd" (click)="postLibrarianDetails()" class="btn btn-primary">Add</button>
+        <button type="button" *ngIf="showUpdate" (click)="updateLibrarianDetails()"
+          class="btn btn-primary">Update</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+{
+  "posts": [
+    {
+      "bookId": 0,
+      "bookName": "social",
+      "authorName": "2",
+      "quantity": "34",
+      "faculty": "55",
+      "id": 1
+    },
+    {
+      "bookId": 0,
+      "bookName": "math",
+      "authorName": "saas",
+      "quantity": "10",
+      "faculty": "8",
+      "id": 2
+    },
+    {
+      "bookId": 0,
+      "bookName": "hr",
+      "authorName": "aa",
+      "quantity": "7",
+      "faculty": "seeee",
+      "id": 3
+    },
+    {
+      "bookId": 0,
+      "bookName": "xyz",
+      "authorName": "aa",
+      "quantity": "9",
+      "faculty": "aaa",
+      "id": 4
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

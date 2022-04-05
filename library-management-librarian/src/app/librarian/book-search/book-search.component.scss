@@ -1,0 +1,12 @@
+.container-fluid {
+    h2{
+        text-align: center;
+        margin: 2rem 0;
+    }
+    .form-inline{
+        display: flex;
+        justify-content:space-evenly;
+        align-items: center;
+        margin: 0 auto;        
+    }
+}

@@ -1,0 +1,55 @@
+<div class="container-fluid">
+
+  <h2>Book Search</h2>
+
+  <nav class="navbar navbar-light">
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" #searchData type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-primary my-2 my-sm-0" type="submit" (click)="searching(searchData.value)">Search</button>
+    </form>
+  </nav>
+  
+  <div style="margin-top: -30px; ">
+    
+    <h4>LOGIN </h4>
+    <h5 style="width:10%;">Student:</h5>
+    <p  style="margin-top: -33px;margin-left: 90px;">
+    <select #selectStd (change)="selectStudent(selectStd.value)">
+      <option *ngFor="let x of stds">{{x.name}}</option>
+    </select>
+  </p>
+  </div>
+</div>
+<div>
+ 
+  <!-- <table *ngIf="bookPresent; else notFound" class="table mt-3"> -->
+  <table *ngIf="bookPresent;" class="table mt-3">
+    <thead>
+      <tr>
+        <th scope="col">Book Id</th>
+        <th scope="col">Book Name</th>
+        <th scope="col">Author Name</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Faculty</th>
+        <th scope="col">Action</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of listOfParticularBook;let i=index">
+        <td>{{ row.id }}</td>
+        <td>{{ row.bookName }}</td>
+        <td>{{ row.authorName }}</td>
+        <td>{{ row.quantity }}</td>
+        <td>{{ row.faculty }}</td>
+        <td>
+          <button type="button" (click)="borrowBook(i)" class="btn btn-primary">Add</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- <p *ngIf="bookPresent==false && clicked" class="text-danger mt-2" style="text-align: center;">Book Not Found!!</p> -->
+  
+  <ng-template #notFound *ngIf="clicked==true">
+    <p class="text-danger mt-2" style="text-align: center;">Book Not Found!!</p>
+  </ng-template>
+
+</div>
