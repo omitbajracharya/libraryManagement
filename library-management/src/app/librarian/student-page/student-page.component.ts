@@ -1,7 +1,7 @@
 
 // import axios from "axios";
 import { Component, OnInit } from '@angular/core';
-import {FormGroup,FormBuilder,FormControl, Validators} from '@angular/forms';
+import {FormGroup,FormControl, Validators} from '@angular/forms';
 import {StudentInterface} from './student-interface';
 
 import {
@@ -59,7 +59,7 @@ constructor( private readonly http: HttpClient){}
       // const lng: string = 'en';
       // this.stds.length=0;
       // <Array<Record<string, any>>>
-
+    
       this.http.get <Array<{id:number,name:string,phone:number,semester:number}>>(`../assets/data/student.json`).subscribe((student) => {
         // this.http.get <Array<{id:number,name:string,phone:number,semester:number}>>(`../student.json`).subscribe((student) => {
         localStorage.setItem("studentArray",JSON.stringify(student)); 

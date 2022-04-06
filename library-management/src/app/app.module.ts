@@ -16,6 +16,7 @@ import { BookSearchComponent } from './librarian/book-search/book-search.compone
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { DashpageComponent } from './dashpage/dashpage.component';
+import { SignupComponent } from './signup/signup.component';
 
 // for Internationalization
 export function HttpLoaderFactory(http: HttpClient){
@@ -29,7 +30,8 @@ export function HttpLoaderFactory(http: HttpClient){
     BookSearchComponent,
     BorrowRequestComponent,
     StudentPageComponent,
-    DashpageComponent
+    DashpageComponent,
+    SignupComponent
     
   ],
   imports: [

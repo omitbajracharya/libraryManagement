@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { TranslateService } from '@ngx-translate/core';
 // import { ActivatedRoute, ParamMap } from '@angular/router';
 // import { FormBuilder, FormGroup } from '@angular/forms';
 // import { LibrarianModel } from './librarian.model';
@@ -11,8 +11,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./librarian.component.scss']
 })
 export class LibrarianComponent implements OnInit {
-    constructor(){}
+  title = 'library-management';
 
+  constructor(private translate: TranslateService){
+    translate.setDefaultLang('english');
+  }
+
+  changeLocale(locale: string){
+    this.translate.use(locale);
+  }
     ngOnInit(): void {
         
     }
