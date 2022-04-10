@@ -7,6 +7,7 @@ import {HttpClient} from '@angular/common/http';
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.scss']
 })
+
 export class SignupComponent implements OnInit {
   signupRecords:Array<{name:string,role:string,email:string,password:string,confirmPassword:string}>=[];
   signupNowRecord!:{name:string,role:string,email:string,password:string,confirmPassword:string};
@@ -19,6 +20,7 @@ export class SignupComponent implements OnInit {
     password:new FormControl(null),
     confirmPassword:new FormControl(null)
   });
+
   constructor(private readonly http: HttpClient) { }
 
   ngOnInit(): void {

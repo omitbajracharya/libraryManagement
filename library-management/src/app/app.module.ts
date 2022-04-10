@@ -17,6 +17,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { DashpageComponent } from './dashpage/dashpage.component';
 import { SignupComponent } from './signup/signup.component';
+import { LoginComponent } from './login/login.component';
 
 // for Internationalization
 export function HttpLoaderFactory(http: HttpClient){
@@ -31,7 +32,8 @@ export function HttpLoaderFactory(http: HttpClient){
     BorrowRequestComponent,
     StudentPageComponent,
     DashpageComponent,
-    SignupComponent
+    SignupComponent,
+    LoginComponent
     
   ],
   imports: [

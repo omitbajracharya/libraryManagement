@@ -1,18 +1,19 @@
 <h1>Angular Application</h1>
-<div class="row">
-    <div class="col-6 librarian_manage">
-        <a routerLink="../librarian-component" routerLinkActive="active" class="btn-success btn-lg n1" style="margin-left: 55%;" >Librarian Component</a>
+<!-- <div class="row">
+    <div class="col-5 librarian_manage">
+        <a routerLink="../login" routerLinkActive="active" class="btn-success btn-lg n1" style="margin-left: 55%;">Admin</a>
     </div>
-    <div class="col-6">
-        <a routerLink="../students-component" routerLinkActive="active" class="btn-danger btn-lg n1 ">Students Component</a>
+    <div class="col-3">
+        <a routerLink="../login" routerLinkActive="active" class="btn-danger btn-lg " >Librarian</a>
     </div>
-</div> 
-<div class="row">
-    <div class="col-3"></div>
+    <div class="col-3">
+        <a routerLink="../login" routerLinkActive="active" class="btn-warning text-white btn-lg" >Student</a>
+    </div>
+</div> -->
 
-    <div class="col-6 text-primary" style="margin-top: 10%;font-size: 50px;">
-        <p class="text-primary">Welcome</p>
-        <p class="text-secondary">Click on Above Button</p>
-        <p class="text-secondary"> to go through it..</p>  
-    </div>
+<h1 class="text-danger">Login As:</h1>
+<div style="margin-left:35%;">
+    <button (click)="login('admin')" [style.background]="adminSelected?'orange':'white'">Admin</button>
+    <button (click)="login('student')" [style.background]="studentSelected?'orange':'white'">Student</button>
+    <button (click)="login('librarian')" [style.background]="librarySelected?'orange':'white'">Librarian</button>    
 </div>

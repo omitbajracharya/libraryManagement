@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4 mt-5" style="border: 1px solid #c2dbfe;">
+            <form [formGroup]="loginDetail">
+                <div class="mb-3">
+                    <label for="formGroupExampleInput"  class="form-label">Email</label>
+                    <input type="text" class="form-control" formControlName="name" id="formGroupExampleInput" placeholder="Name">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput2" class="form-label">Password</label>
+                    <input type="password" class="form-control" formControlName="password" id="formGroupExampleInput2" placeholder="password">
+                </div>
+                <div class="mb-3">
+                    <button class="btn btn-outline-primary">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<h1>"{{role}}" obtained in Login component....</h1>
