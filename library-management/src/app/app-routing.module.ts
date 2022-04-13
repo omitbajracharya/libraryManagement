@@ -5,14 +5,18 @@ import { BookSearchComponent } from './librarian/book-search/book-search.compone
 import { StudentPageComponent } from './librarian/student-page/student-page.component';
 import { BorrowRequestComponent } from './librarian/borrow-request/borrow-request.component';
 import {LoginComponent} from './login/login.component';
+import {SignupComponent} from './signup/signup.component';
+import { DashpageComponent } from './dashpage/dashpage.component';
 
 const routes: Routes = [
   {path: 'add-book-inventory', component: AddBookInventoryComponent},
   {path: 'book-search', component: BookSearchComponent},
   {path: 'student-page', component: StudentPageComponent},
   {path: 'borrow-request', component: BorrowRequestComponent},
-  // {path: '', component: LoginComponent},
-  {path: 'login', component: LoginComponent}
+  {path: '', component: DashpageComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'signup', component: SignupComponent}
+
 
   //redirect to Librarian component
   // {path: '', redirectTo: '/login', pathMatch: 'full'},

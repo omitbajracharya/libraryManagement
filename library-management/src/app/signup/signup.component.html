@@ -2,6 +2,9 @@
     <div class="row">
         <div class="col-4"></div>
         <div class="col-4 mt-5" style="border: 1px solid #c2dbfe;">
+            <h4 style="text-align: center;" class="text-warning">System SignUP</h4>
+            <h6 style="text-align: center;">🖤Get Free Membership🖤</h6>
+            <hr>
             <form [formGroup]="signupDetail">
                 <div class="mb-3">
                     <label for="formGroupExampleInput"  class="form-label">Name</label>
@@ -9,24 +12,29 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="formGroupExampleInput2" class="form-label">Role</label>
-                    <input type="text" class="form-control" formControlName="role" id="formGroupExampleInput2" placeholder="Role">
+                    <label for="formGroupExampleInput2" class="form-label">Role</label><br>
+                    <select formControlName="role" class="form-control">
+                        <option [value]="role" *ngFor="let role of loginRole">{{role}}</option>
+                    </select>
+                    <!-- <input type="text" class="form-control" formControlName="role" id="formGroupExampleInput2" placeholder="Role"> -->
                 </div>
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Email Address</label>
                     <input type="text" class="form-control" formControlName="email" id="formGroupExampleInput2" placeholder="Email Address">
+                    <!-- <span class="error" *ngIf="email.invalid && email.touched">*Invalid email</span> -->
                 </div>
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Password</label>
                     <input type="text" class="form-control" formControlName="password" id="formGroupExampleInput2" placeholder="Password">
-                    <span style="color: red;">{{matchPassword}}</span>
+                    <span  class="error">{{matchPassword}}</span>
                 </div>
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">Confirm Password</label>
                     <input type="text" class="form-control" formControlName="confirmPassword" id="formGroupExampleInput2" placeholder="Confirm Password">
                 </div>
                 <div class="mb-3">
-                    <button class="btn btn-outline-primary" (click)="signupUser()">Sign UP</button>
+                    <button class="btn btn-outline-primary" (click)="signupUser()" [disabled]="signupDetail.invalid">Sign UP</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a routerLink="/login" class="text-info">Already Member ? Click to Login</a>
                 </div>
             </form>
         </div>
